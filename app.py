@@ -20,7 +20,8 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 # Model saved with Keras model.save()
-MODEL_PATH = './model/vgg16_flower_classification.h5'
+MODEL_PATH = '/model/vgg16_flower_classification.h5'
+MODEL_PATH = next(os.walk(MODEL_PATH))
 
 # Load your trained model
 model = load_model(MODEL_PATH)
